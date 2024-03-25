@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: darkolivegreen;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+}
+
+.box {
+    width:200px;
+    height: 60px;
+    margin: 10px 10px;
+    position: relative;
+    background-color: rgb(36, 100, 155);
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px; /* Added margin-bottom for spacing between boxes */
+}
+
+.box input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.box .content {
+    position: absolute;
+    top: 70px;
+    width: 200px;
+    gap: 20px;
+    display: flex;
+    transform-origin: top;
+    transform: scale(0);
+    transition: all 0.4s;
+    flex-direction: column;
+}
+
+.box .content a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(36, 100, 155);
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+}
+
+.box input:checked ~ .content {
+    transform: scale(1);
+}
+
+.box i {
+    transform: rotate(0);
+    transition: all 0.4s;
+}
+
+.box input:checked ~ i {
+    transform: rotate(-180deg)
+}
+
+.box .content a:hover {
+    background-color: rgb(27, 149, 255);
+}
